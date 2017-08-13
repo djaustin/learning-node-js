@@ -10,6 +10,7 @@ function Greeter() {
   this.greeting = 'Hello';
 }
 
+
 // Any new Greeter objects will also have the properties and methods from Greeter's prototype
 // This sets the prototype of Greeter's prototype object to be the prototype of the Events constructor.
 // Prototype Chain: Greeter -> Greeter.prototype -> Event.prototype
