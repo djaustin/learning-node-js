@@ -4,6 +4,9 @@ const Events = require('events');
 // It will override the prototype of the inheriting object so any custom additions must be made after calling the function
 
 function Greeter() {
+  // Adds all properties and methods that are defined in the Events constructor to our Greeter objects.
+  // We need to do this because util.inherits only connects us to the prototype of 'Events' meaning we would not get any of the members created in the Events constructor
+  Events.call(this); // Functions a bit like a 'super' constructor
   this.greeting = 'Hello';
 }
 
@@ -23,7 +26,7 @@ Greeter.prototype.greet = function(name) {
   this.emit('greeted', name);
 }
 
-var gtr = new Greeter();
+let gtr = new Greeter();
 
 gtr.on('greeted', function(name='Someone'){
   console.log(name + ' has been greeted.')
