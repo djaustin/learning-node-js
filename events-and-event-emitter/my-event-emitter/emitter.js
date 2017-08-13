@@ -1,5 +1,5 @@
 // Example version of how to construct an event emitter.
-
+// This is far simpler than the core event emitter but the idea is the same
 function Emitter(){
   this.events = {};
 }
