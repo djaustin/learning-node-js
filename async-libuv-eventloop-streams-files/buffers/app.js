@@ -1,4 +1,5 @@
 // Always available, no need to import
+// Buffer is an extension of the V8 engine in node js to allow for processing of binary data
 let buf = new Buffer('Hello', 'utf8');
 console.log(buf);
 console.log(buf.toString());
