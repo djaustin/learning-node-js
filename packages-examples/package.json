@@ -1,0 +1,17 @@
+{
+  "name": "packages",
+  "version": "1.0.0",
+  "description": "NPM Tests",
+  "main": "app.js",
+  "dependencies": {
+    "moment": "^2.18.1"
+  },
+  "devDependencies": {
+    "jasmine-node": "^1.14.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
