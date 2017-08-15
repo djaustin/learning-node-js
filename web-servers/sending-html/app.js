@@ -14,6 +14,7 @@ const server = http.createServer((req, res) => {
 
   // ---STREAM ASIDE---
   // If we did not need to replace the placeholder, we could create a readable stream from the file then pipe it to the response stream
+
   // Load index.html with fudged template language. Replace the placeholder with the message variable
   fs.readFile(`${__dirname}/index.html`,'utf8', (err, data) => {
     if(!err){
