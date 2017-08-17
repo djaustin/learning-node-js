@@ -1,7 +1,10 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+
 const port = process.env.PORT || 3000;
 const app = express();
+const jsonParser = bodyParser.json();
+
 
 app.set('view engine', 'pug');
 app.use('/assets', express.static('./public'));
@@ -24,15 +27,27 @@ app.get('/person/:id(\\d+)', (req, res) => {
 // eg. bodyParser.json(..) will parse the body if it is of type JSON and set the value of req.body to an object created from the JSON
 // eg. bodyParser.text(..) will parse the body if it is of type text and set the value of req.body to string created from the body
 // We can chain middleware in our requests. The below will check for URL-encoded then check for JSON so the req.body variable will be set if either of them can parse the body
-app.post('/person', bodyParser.urlencoded({extended:false}), bodyParser.json(), (req, res) => {
+app.post('/person', bodyParser.urlencoded({extended:false}), jsonParser, (req, res) => {
   res.render('person', {postParams: req.body})
 });
 
 
-app.post('/personjson', bodyParser.json(), (req, res) => {
+app.post('/personjson', jsonParser, (req, res) => {
   res.send('JSON Data Received');
   console.log('Received: ', req.body);
 });
+
+app.get('/api/person/:id(\\d+)', (req, res) => {
+  // Return person info
+});
+
+app.post('/api/person', jsonParser, (req, res) => {
+  // Save person to database
+}
+
+app.delete('/api/person/:id(\\d+)', (req, res) => {
+  // Delet person
+})
 
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
