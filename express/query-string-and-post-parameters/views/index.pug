@@ -1,0 +1,15 @@
+html
+  head
+    link(rel='stylesheet' href='/assets/style.css' type='text/css')
+    title My Node App
+  body
+    h1 Welcome
+    p Hello World
+    form(method='POST' action='/person')
+      label(for='firstname') First Name:
+      input#firstname(type='text' name='firstname')
+      br
+      label(for='lastname') Last Name:
+      input#lastname(type='text' name='lastname')
+      br
+      button(type='submit') Submit

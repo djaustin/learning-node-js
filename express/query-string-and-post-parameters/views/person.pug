@@ -1,0 +1,17 @@
+html
+  head
+    link(rel='stylesheet' href='/assets/style.css' type='text/css')
+    title My Node App
+  body
+    h1 Welcome
+    //- This is a javascript expression that will be evaluated when rendered with res.render('person', {id: res.params.id})
+    if id
+      p= 'Person: ' + id 
+    if postParams
+      p Thank you, #{postParams.firstname} #{postParams.lastname}.
+    if queryString
+      ul
+        //- Create a list of key-value pairs from the query string of the request url
+        each value, key in queryString
+          li #{key}: #{value}
+        
