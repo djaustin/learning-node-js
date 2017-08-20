@@ -1,9 +1,36 @@
 {
+  "environment":"dev",
   "mongo": {
     "hostname": "localhost",
     "port": 27017,
     "username": "todo",
     "password": "password",
     "dbName": "nodeTodo"
-  }
+  },
+  "starterTodos": [
+    {
+      "username": "test",
+      "todo": "Buy milk",
+      "completed": false,
+      "hasAttachment": false
+    },
+    {
+      "username": "test",
+      "todo": "Wash car",
+      "completed": false,
+      "hasAttachment": false
+    },
+    {
+      "username": "test",
+      "todo": "Feed dog",
+      "completed": false,
+      "hasAttachment": false
+    },
+    {
+      "username": "test",
+      "todo": "Learn Node.js",
+      "completed": false,
+      "hasAttachment": false
+    }
+  ]
 }
